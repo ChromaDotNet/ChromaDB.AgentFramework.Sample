@@ -42,6 +42,19 @@ public sealed class LibraryAgentTests(ChromaFixture chroma) : IClassFixture<Chro
     }
 
     [Fact]
+    public async Task Remembers_what_the_reader_says_and_not_the_answers()
+    {
+        var model = new RecordingChatClient();
+        using var library = await CreateAgentAsync(model, NewReader());
+
+        await AskAsync(library, "Hi, I'm Grace. I study astronomy.");
+        await AskAsync(library, "What do I study?");
+
+        Assert.Contains("I study astronomy.", model.LastMessagesText);
+        Assert.DoesNotContain("Noted.", model.LastMessagesText);
+    }
+
+    [Fact]
     public async Task Does_not_share_the_memories_of_a_reader_with_another_reader()
     {
         var model = new RecordingChatClient();

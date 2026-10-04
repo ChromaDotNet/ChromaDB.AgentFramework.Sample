@@ -52,9 +52,11 @@ public sealed class LibraryAgent : IDisposable
             return passages;
         });
 
-        // The messages of the conversations are stored in Chroma, and the ones of the same reader are searched in later sessions.
+        // What the reader says is stored in Chroma, and searched in later sessions of the same reader.
+        // The answers of the agent are not stored: they would repeat the handbook and crowd out what the reader said.
         var memory = new ChatHistoryMemoryProvider(vectorStore, MemoryCollectionName, embeddingDimensions,
-            _ => new ChatHistoryMemoryProvider.State(new ChatHistoryMemoryProviderScope { UserId = readerId }));
+            _ => new ChatHistoryMemoryProvider.State(new ChatHistoryMemoryProviderScope { UserId = readerId }),
+            new ChatHistoryMemoryProviderOptions { StorageInputResponseMessageFilter = _ => [] });
 
         var agent = chatClient.AsAIAgent(new ChatClientAgentOptions
         {
