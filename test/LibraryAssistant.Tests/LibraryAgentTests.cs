@@ -73,6 +73,17 @@ public sealed class LibraryAgentTests(ChromaFixture chroma) : IClassFixture<Chro
         Assert.Contains("My favourite colour is teal.", adaSees);
     }
 
+    [Fact]
+    public async Task Asks_the_model_for_the_most_likely_answer()
+    {
+        var model = new RecordingChatClient();
+        using var library = await CreateAgentAsync(model, NewReader());
+
+        await AskAsync(library, "Until what time is the library open on Saturday?");
+
+        Assert.Equal(0f, model.LastOptions?.Temperature);
+    }
+
     private Task<LibraryAgent> CreateAgentAsync(RecordingChatClient model, string readerId)
         => LibraryAgent.CreateAsync(model, chroma.VectorStore, ChromaFixture.EmbeddingDimensions, readerId, _cancellationToken);
 

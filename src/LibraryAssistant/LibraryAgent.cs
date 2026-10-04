@@ -61,7 +61,8 @@ public sealed class LibraryAgent : IDisposable
         var agent = chatClient.AsAIAgent(new ChatClientAgentOptions
         {
             Name = "LibraryAssistant",
-            ChatOptions = new ChatOptions { Instructions = Instructions },
+            // Temperature 0: the model always picks the most likely words, so the same question gets the same answer.
+            ChatOptions = new ChatOptions { Instructions = Instructions, Temperature = 0 },
             AIContextProviders = [handbookSearch, memory],
         });
 
