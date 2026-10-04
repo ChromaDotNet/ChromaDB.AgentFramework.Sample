@@ -7,7 +7,7 @@ using OllamaSharp;
 
 var chromaUri = Setting("CHROMA_URI", "http://localhost:8000");
 var ollamaUri = Setting("OLLAMA_URI", "http://localhost:11434");
-var chatModel = Setting("CHAT_MODEL", "qwen2.5:1.5b");
+var chatModel = Setting("CHAT_MODEL", "qwen2.5:3b");
 var embeddingModel = Setting("EMBEDDING_MODEL", "all-minilm");
 var embeddingDimensions = int.Parse(Setting("EMBEDDING_DIMENSIONS", "384"));
 

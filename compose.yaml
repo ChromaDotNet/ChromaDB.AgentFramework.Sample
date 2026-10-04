@@ -21,7 +21,7 @@ services:
       - ollama
     environment:
       OLLAMA_HOST: ollama:11434
-    entrypoint: ["/bin/sh", "-c", "ollama pull qwen2.5:1.5b && ollama pull all-minilm"]
+    entrypoint: ["/bin/sh", "-c", "ollama pull qwen2.5:3b && ollama pull all-minilm"]
 
 volumes:
   chroma:
