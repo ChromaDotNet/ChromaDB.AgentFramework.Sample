@@ -8,7 +8,7 @@ services:
       - chroma:/data
 
   ollama:
-    image: ollama/ollama:latest
+    image: ollama/ollama:0.35.1
     ports:
       - "11434:11434"
     volumes:
@@ -16,7 +16,7 @@ services:
 
   # Downloads the chat and embedding models into the ollama volume, then exits.
   ollama-models:
-    image: ollama/ollama:latest
+    image: ollama/ollama:0.35.1
     depends_on:
       - ollama
     environment:
