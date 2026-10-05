@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net10.0</TargetFrameworks>
+
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <NoWarn>$(NoWarn);MAAI001</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ChromaDotNet.VectorData" Version="0.3.1" />
+    <PackageReference Include="Microsoft.Agents.AI" Version="1.23.0" />
+    <PackageReference Include="OllamaSharp" Version="5.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- The TextSearchStore of the sample with Microsoft Foundry models. -->
+    <Compile Include="../AgentWithRAG_Step07_ChromaBasicTextRAG/TextSearchStore/*.cs" Link="TextSearchStore/%(Filename)%(Extension)" />
+  </ItemGroup>
+
+</Project>

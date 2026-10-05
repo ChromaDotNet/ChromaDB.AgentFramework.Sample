@@ -12,6 +12,8 @@
 | [Memory with Chroma and Ollama](./samples/AgentWithMemory_Step10_MemoryUsingChroma_Ollama/) | The same sample with models that run locally in Ollama. |
 | [RAG with Chroma](./samples/AgentWithRAG_Step06_ChromaRAG/) | Answers from documentation stored in Chroma with a custom schema, through `TextSearchProvider`, with Microsoft Foundry models. In the form of [RAG with Vector Store and custom schema](https://github.com/microsoft/agent-framework/tree/main/dotnet/samples/02-agents/AgentWithRAG/AgentWithRAG_Step02_CustomVectorStoreRAG). |
 | [RAG with Chroma and Ollama](./samples/AgentWithRAG_Step06_ChromaRAG_Ollama/) | The same sample with models that run locally in Ollama. |
+| [RAG with Chroma and the TextSearchStore](./samples/AgentWithRAG_Step07_ChromaBasicTextRAG/) | Answers from documents stored in Chroma by the `TextSearchStore` of the Agent Framework sample, which writes and reads them as dictionaries, through `TextSearchProvider`, with Microsoft Foundry models. In the form of [Basic Text RAG](https://github.com/microsoft/agent-framework/tree/main/dotnet/samples/02-agents/AgentWithRAG/AgentWithRAG_Step01_BasicTextRAG). |
+| [RAG with Chroma, the TextSearchStore and Ollama](./samples/AgentWithRAG_Step07_ChromaBasicTextRAG_Ollama/) | The same sample with models that run locally in Ollama. |
 
 The Microsoft Foundry samples need a Foundry project and `az login`; each README lists what it needs. The Ollama samples need only Docker: [compose.yaml](./compose.yaml) runs Chroma and Ollama, and downloads the models.
 
@@ -32,3 +34,4 @@ The tests run the scenario of each sample, with the same configuration, against 
 
 - Memory: the preference of the user reaches the model in a new session, the messages of another user do not, and each session is stored under its own session id.
 - RAG: the chunk that answers the question reaches the model, the search results are not stored in the chat history, a follow-up question is searched with the recent messages, and the chunks are stored with their source.
+- RAG with the TextSearchStore: the document that answers each question reaches the model, the search results are not stored in the chat history, and the documents are stored with their source.

@@ -4,6 +4,8 @@
     <Project Path="samples/AgentWithMemory_Step10_MemoryUsingChroma_Ollama/AgentWithMemory_Step10_MemoryUsingChroma_Ollama.csproj" />
     <Project Path="samples/AgentWithRAG_Step06_ChromaRAG/AgentWithRAG_Step06_ChromaRAG.csproj" />
     <Project Path="samples/AgentWithRAG_Step06_ChromaRAG_Ollama/AgentWithRAG_Step06_ChromaRAG_Ollama.csproj" />
+    <Project Path="samples/AgentWithRAG_Step07_ChromaBasicTextRAG/AgentWithRAG_Step07_ChromaBasicTextRAG.csproj" />
+    <Project Path="samples/AgentWithRAG_Step07_ChromaBasicTextRAG_Ollama/AgentWithRAG_Step07_ChromaBasicTextRAG_Ollama.csproj" />
   </Folder>
   <Folder Name="/test/">
     <Project Path="test/ChromaDB.AgentFramework.Sample.Tests/ChromaDB.AgentFramework.Sample.Tests.csproj" />

@@ -26,5 +26,9 @@
     <Using Include="Xunit" />
   </ItemGroup>
 
+  <ItemGroup>
+    <!-- The TextSearchStore of AgentWithRAG_Step07_ChromaBasicTextRAG. -->
+    <Compile Include="../../samples/AgentWithRAG_Step07_ChromaBasicTextRAG/TextSearchStore/*.cs" Link="TextSearchStore/%(Filename)%(Extension)" />
+  </ItemGroup>
 
 </Project>
