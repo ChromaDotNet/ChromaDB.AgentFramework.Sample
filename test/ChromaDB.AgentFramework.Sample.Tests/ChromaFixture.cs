@@ -2,7 +2,7 @@ using ChromaDB.Client;
 using ChromaDB.VectorData;
 using Testcontainers.Chroma;
 
-namespace LibraryAssistant.Tests;
+namespace ChromaDB.AgentFramework.Sample.Tests;
 
 /// <summary>
 /// Starts Chroma in a container for the tests, with a vector store that uses <see cref="WordEmbeddingGenerator"/>.

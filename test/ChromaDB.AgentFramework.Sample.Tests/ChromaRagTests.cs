@@ -2,7 +2,7 @@ using Microsoft.Agents.AI;
 using Microsoft.Extensions.AI;
 using Microsoft.Extensions.VectorData;
 
-namespace LibraryAssistant.Tests;
+namespace ChromaDB.AgentFramework.Sample.Tests;
 
 /// <summary>
 /// The scenario of AgentWithRAG_Step06_ChromaRAG, with the same schema, TextSearchProvider options and chat history filter,

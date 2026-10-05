@@ -1,6 +1,6 @@
 using Microsoft.Extensions.AI;
 
-namespace LibraryAssistant.Tests;
+namespace ChromaDB.AgentFramework.Sample.Tests;
 
 /// <summary>
 /// A chat model that answers "Noted." and records the messages the agent sends to it, context included.

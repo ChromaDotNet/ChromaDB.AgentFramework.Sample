@@ -1,7 +1,7 @@
 using Microsoft.Agents.AI;
 using Microsoft.Extensions.AI;
 
-namespace LibraryAssistant.Tests;
+namespace ChromaDB.AgentFramework.Sample.Tests;
 
 /// <summary>
 /// The scenario of AgentWithMemory_Step10_MemoryUsingChroma, with the same ChatHistoryMemoryProvider configuration,

@@ -2,7 +2,7 @@ using System.Security.Cryptography;
 using System.Text;
 using Microsoft.Extensions.AI;
 
-namespace LibraryAssistant.Tests;
+namespace ChromaDB.AgentFramework.Sample.Tests;
 
 /// <summary>
 /// Deterministic embeddings without a model: each word adds one to a dimension chosen by its hash,

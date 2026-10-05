@@ -2,11 +2,10 @@
   <Folder Name="/samples/">
     <Project Path="samples/AgentWithMemory_Step10_MemoryUsingChroma/AgentWithMemory_Step10_MemoryUsingChroma.csproj" />
     <Project Path="samples/AgentWithMemory_Step10_MemoryUsingChroma_Ollama/AgentWithMemory_Step10_MemoryUsingChroma_Ollama.csproj" />
-  </Folder>
-  <Folder Name="/src/">
-    <Project Path="src/LibraryAssistant/LibraryAssistant.csproj" />
+    <Project Path="samples/AgentWithRAG_Step06_ChromaRAG/AgentWithRAG_Step06_ChromaRAG.csproj" />
+    <Project Path="samples/AgentWithRAG_Step06_ChromaRAG_Ollama/AgentWithRAG_Step06_ChromaRAG_Ollama.csproj" />
   </Folder>
   <Folder Name="/test/">
-    <Project Path="test/LibraryAssistant.Tests/LibraryAssistant.Tests.csproj" />
+    <Project Path="test/ChromaDB.AgentFramework.Sample.Tests/ChromaDB.AgentFramework.Sample.Tests.csproj" />
   </Folder>
 </Solution>
