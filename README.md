@@ -15,7 +15,7 @@
 | [RAG with Chroma and the TextSearchStore](./samples/AgentWithRAG_Step07_ChromaBasicTextRAG/) | Answers from documents stored in Chroma by the `TextSearchStore` of the Agent Framework sample, which writes and reads them as dictionaries, through `TextSearchProvider`, with Microsoft Foundry models. In the form of [Basic Text RAG](https://github.com/microsoft/agent-framework/tree/main/dotnet/samples/02-agents/AgentWithRAG/AgentWithRAG_Step01_BasicTextRAG). |
 | [RAG with Chroma, the TextSearchStore and Ollama](./samples/AgentWithRAG_Step07_ChromaBasicTextRAG_Ollama/) | The same sample with models that run locally in Ollama. |
 
-The Microsoft Foundry samples need a Foundry project and `az login`; each README lists what it needs. The Ollama samples need only Docker: [compose.yaml](./compose.yaml) runs Chroma and Ollama, and downloads the models.
+The Microsoft Foundry samples need a Foundry project and `az login`; each README lists what it needs. The Ollama samples need only the [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0) and Docker: [compose.yaml](./compose.yaml) runs Chroma and Ollama, and downloads the models.
 
 ```bash
 docker compose up -d
@@ -28,7 +28,7 @@ dotnet run --project samples/AgentWithMemory_Step10_MemoryUsingChroma_Ollama
 dotnet test
 ```
 
-GitHub Actions runs them on every push.
+GitHub Actions runs them on every push to `main` and on every pull request to `main`.
 
 The tests run the scenario of each sample, with the same configuration, against Chroma in a container started with [ChromaDotNet.Testcontainers](https://www.nuget.org/packages/ChromaDotNet.Testcontainers). They need Docker, but no model: the embeddings come from word hashes and the chat model only records what the agent sends to it.
 
