@@ -10,7 +10,7 @@ The documents are stored by the `TextSearchStore` of the [Agent Framework sample
   - A chat model deployment (the default is `gpt-5.4-mini`)
   - A `text-embedding-3-large` deployment with 3,072 dimensions
 - Azure CLI installed and authenticated (`az login`) with an identity that has the Foundry User role on the Foundry resource
-- A running Chroma server, 1.5.0 or later: `docker compose up -d chroma` at the root of the repository starts the one of the [compose file](../../compose.yaml), or you can run a local instance using Docker:
+- A running Chroma server, 1.5.0 or later: `docker compose up -d chroma` at the root of the repository starts the instance defined in the [compose file](../../compose.yaml), or you can run a local instance using Docker:
 
 ```powershell
 docker run -d --name chroma -p 8000:8000 chromadb/chroma:1.5.9
