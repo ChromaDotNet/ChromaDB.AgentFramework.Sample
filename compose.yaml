@@ -1,4 +1,4 @@
-# Chroma and Ollama for the sample: docker compose up -d
+# Chroma and Ollama for the samples: docker compose up -d
 services:
   chroma:
     image: chromadb/chroma:1.5.9
