@@ -1,8 +1,12 @@
+[![ChromaDotNet](https://raw.githubusercontent.com/ChromaDotNet/.github/main/assets/logo-64.png)](https://chromadotnet.org)
+
 # ChromaDB.AgentFramework.Sample
 
 [Microsoft Agent Framework](https://learn.microsoft.com/agent-framework/) samples that use [Chroma](https://www.trychroma.com/) as the vector store, through [ChromaDotNet.VectorData](https://www.nuget.org/packages/ChromaDotNet.VectorData). They follow the form of the [.NET samples of Agent Framework](https://github.com/microsoft/agent-framework/tree/main/dotnet/samples/02-agents), with Chroma in place of the vector store of the original sample, and each one also comes with models that run locally in Ollama.
 
 > This is a community project. It is not affiliated with or endorsed by Chroma.
+
+Website: [chromadotnet.org](https://chromadotnet.org)
 
 ## Samples
 
