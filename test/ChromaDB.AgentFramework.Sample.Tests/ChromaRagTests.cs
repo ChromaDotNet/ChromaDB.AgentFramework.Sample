@@ -74,8 +74,8 @@ public sealed class ChromaRagTests(ChromaFixture chroma) : IClassFixture<ChromaF
     {
         await CreateAgentAsync(new RecordingChatClient(), []);
 
-        var collection = chroma.ChromaClient.GetCollectionClient(await chroma.ChromaClient.GetCollection(CollectionName, cancellationToken: _cancellationToken));
-        var records = await collection.Get(include: ChromaDB.Client.ChromaGetInclude.Metadatas, cancellationToken: _cancellationToken);
+        var collection = chroma.ChromaClient.GetCollectionClient(await chroma.ChromaClient.GetCollectionAsync(CollectionName, cancellationToken: _cancellationToken));
+        var records = await collection.GetAsync(include: ChromaDB.Client.ChromaGetInclude.Metadatas, cancellationToken: _cancellationToken);
 
         Assert.Equal(s_documents.Length, records.Count);
         Assert.All(records, record => Assert.Equal("Agent Framework notes", record.Metadata!["SourceName"]));

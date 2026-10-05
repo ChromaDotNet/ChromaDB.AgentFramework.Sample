@@ -51,8 +51,8 @@ public sealed class MemoryUsingChromaTests(ChromaFixture chroma) : IClassFixture
         await agent.RunAsync("I like jokes about Pirates.", await agent.CreateSessionAsync(_cancellationToken), cancellationToken: _cancellationToken);
         await agent.RunAsync("Tell me a joke that I might like.", await agent.CreateSessionAsync(_cancellationToken), cancellationToken: _cancellationToken);
 
-        var collection = chroma.ChromaClient.GetCollectionClient(await chroma.ChromaClient.GetCollection(CollectionName, cancellationToken: _cancellationToken));
-        var records = await collection.Get(where: ChromaDB.Client.ChromaWhereOperator.Equal("UserId", userId), include: ChromaDB.Client.ChromaGetInclude.Metadatas, cancellationToken: _cancellationToken);
+        var collection = chroma.ChromaClient.GetCollectionClient(await chroma.ChromaClient.GetCollectionAsync(CollectionName, cancellationToken: _cancellationToken));
+        var records = await collection.GetAsync(where: ChromaDB.Client.ChromaWhereOperator.Equal("UserId", userId), include: ChromaDB.Client.ChromaGetInclude.Metadatas, cancellationToken: _cancellationToken);
 
         Assert.Equal(4, records.Count);
         Assert.Equal(2, records.Select(record => (string)record.Metadata!["SessionId"]).Distinct().Count());
