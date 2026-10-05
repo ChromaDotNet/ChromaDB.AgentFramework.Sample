@@ -18,7 +18,7 @@ This sample is [Agent with Memory Using Chroma](../AgentWithMemory_Step10_Memory
    docker compose up -d
    ```
 
-   The first run downloads `qwen2.5:3b` and `all-minilm`, about 2 GB; `docker compose logs -f ollama-models` shows the progress.
+   The first run downloads `qwen2.5:3b` and `nomic-embed-text`, about 2 GB; `docker compose logs -f ollama-models` shows the progress.
 
 ## Configuration
 
@@ -28,8 +28,8 @@ The defaults match the compose file. To change them, set the following environme
 |---|---|---|
 | `OLLAMA_ENDPOINT` | Ollama endpoint | `http://localhost:11434` |
 | `OLLAMA_MODEL_NAME` | Chat model | `qwen2.5:3b` |
-| `OLLAMA_EMBEDDING_MODEL_NAME` | Embedding model | `all-minilm` |
-| `OLLAMA_EMBEDDING_DIMENSIONS` | Number of dimensions produced by the embedding model | `384` |
+| `OLLAMA_EMBEDDING_MODEL_NAME` | Embedding model | `nomic-embed-text` |
+| `OLLAMA_EMBEDDING_DIMENSIONS` | Number of dimensions produced by the embedding model | `768` |
 | `CHROMA_ENDPOINT` | Chroma server endpoint | `http://localhost:8000` |
 
 ## Run the Sample

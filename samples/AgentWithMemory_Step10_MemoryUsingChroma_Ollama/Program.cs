@@ -11,8 +11,8 @@ using OllamaSharp;
 
 var endpoint = Environment.GetEnvironmentVariable("OLLAMA_ENDPOINT") ?? "http://localhost:11434";
 var modelName = Environment.GetEnvironmentVariable("OLLAMA_MODEL_NAME") ?? "qwen2.5:3b";
-var embeddingModelName = Environment.GetEnvironmentVariable("OLLAMA_EMBEDDING_MODEL_NAME") ?? "all-minilm";
-var embeddingDimensions = 384;
+var embeddingModelName = Environment.GetEnvironmentVariable("OLLAMA_EMBEDDING_MODEL_NAME") ?? "nomic-embed-text";
+var embeddingDimensions = 768;
 if (Environment.GetEnvironmentVariable("OLLAMA_EMBEDDING_DIMENSIONS") is string embeddingDimensionsValue &&
     (!int.TryParse(embeddingDimensionsValue, out embeddingDimensions) || embeddingDimensions <= 0))
 {
