@@ -15,7 +15,7 @@ This sample uses `ChatHistoryMemoryProvider` with `ChromaVectorStore` from [Chro
 2. A Microsoft Foundry project with:
    - A chat model deployment (the default is `gpt-5.4-mini`)
    - A `text-embedding-3-large` deployment with 3,072 dimensions
-3. A running Chroma server, 1.5.0 or later: `docker compose up -d chroma` at the root of the repository starts the one of the [compose file](../../compose.yaml), or you can run one with Docker:
+3. A running Chroma server, 1.5.0 or later: `docker compose up -d chroma` at the root of the repository starts the instance defined in the [compose file](../../compose.yaml), or you can run one with Docker:
 
    ```bash
    docker run -d --name chroma -p 8000:8000 chromadb/chroma:1.5.9
