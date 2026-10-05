@@ -1,3 +1,5 @@
+// Copyright (c) Microsoft. All rights reserved.
+
 // This sample shows how to use TextSearchProvider to add retrieval augmented generation (RAG) capabilities to an AI agent, with Chroma as the vector store.
 // The TextSearchProvider runs a search against the vector store via the TextSearchStore before each model invocation and injects the results into the model context.
 // The TextSearchStore is a sample store implementation that hardcodes a storage schema and uses the vector store to store and retrieve documents.

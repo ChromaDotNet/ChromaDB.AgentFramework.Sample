@@ -1,3 +1,5 @@
+// Copyright (c) Microsoft. All rights reserved.
+
 // This sample shows how to persist chat history in Chroma using the ChatHistoryMemoryProvider.
 // The agent can then use chat history from prior conversations to inform responses in new conversations.
 

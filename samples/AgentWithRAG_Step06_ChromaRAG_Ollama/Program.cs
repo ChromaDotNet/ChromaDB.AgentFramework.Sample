@@ -1,3 +1,5 @@
+// Copyright (c) Microsoft. All rights reserved.
+
 // This sample shows how to use Chroma with a custom schema to add retrieval augmented generation (RAG) capabilities to an AI agent,
 // with a chat model and an embedding model that run locally in Ollama.
 // The TextSearchProvider runs a search against the vector store before each model invocation and injects the results into the model context.

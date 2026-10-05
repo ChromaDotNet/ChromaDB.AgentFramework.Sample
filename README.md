@@ -35,3 +35,5 @@ The tests run the scenario of each sample, with the same configuration, against 
 - Memory: the preference of the user reaches the model in a new session, the messages of another user do not, and each session is stored under its own session id.
 - RAG: the chunk that answers the question reaches the model, the search results are not stored in the chat history, a follow-up question is searched with the recent messages, and the chunks are stored with their source.
 - RAG with the TextSearchStore: the document that answers each question reaches the model, the search results are not stored in the chat history, and the documents are stored with their source.
+
+The `TextSearchStore` in [AgentWithRAG_Step07_ChromaBasicTextRAG/TextSearchStore](./samples/AgentWithRAG_Step07_ChromaBasicTextRAG/TextSearchStore/) comes from the [Agent Framework repository](https://github.com/microsoft/agent-framework) (MIT) as it is, and keeps its copyright notice; the programs of the samples are adaptations of the Agent Framework samples linked in the table above, under the same license, and carry the same copyright notice.
