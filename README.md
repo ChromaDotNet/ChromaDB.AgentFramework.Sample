@@ -4,6 +4,16 @@ A [Microsoft Agent Framework](https://learn.microsoft.com/agent-framework/) agen
 
 > This is a community project. It is not affiliated with or endorsed by Chroma.
 
+## Samples
+
+| Sample | Description |
+|---|---|
+| [Memory with Chroma](./samples/AgentWithMemory_Step10_MemoryUsingChroma/) | Persists chat history in Chroma with `ChatHistoryMemoryProvider` and recalls it in a new session, with Microsoft Foundry models, in the form of the [Agent Framework memory samples](https://github.com/microsoft/agent-framework/tree/main/dotnet/samples/02-agents/AgentWithMemory). |
+| [Memory with Chroma and Ollama](./samples/AgentWithMemory_Step10_MemoryUsingChroma_Ollama/) | The same sample with models that run locally in Ollama. |
+| [Library assistant](#library-assistant) | Answers from a handbook stored in Chroma and remembers each reader, with models that run locally in Ollama. |
+
+## Library assistant
+
 The agent is the assistant of the Riverside Community Library, a library that exists only in this sample, so the model can answer only from what it finds in Chroma:
 
 - **Handbook search.** The rules of the library are stored in a Chroma collection. Before each call to the model, a [`TextSearchProvider`](https://learn.microsoft.com/agent-framework/agents/rag) searches the passages nearest to the question and adds them to the context.
