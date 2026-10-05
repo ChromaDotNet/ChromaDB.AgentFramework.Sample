@@ -10,7 +10,7 @@ It also uses a custom schema for the documents stored in the vector store.
   - A chat model deployment (the default is `gpt-5.4-mini`)
   - A `text-embedding-3-large` deployment with 3,072 dimensions
 - Azure CLI installed and authenticated (`az login`) with an identity that has the Foundry User role on the Foundry resource
-- A running Chroma server, 1.5.0 or later. You can run a local instance using Docker:
+- A running Chroma server, 1.5.0 or later: `docker compose up -d chroma` at the root of the repository starts the one of the [compose file](../../compose.yaml), or you can run a local instance using Docker:
 
 ```powershell
 docker run -d --name chroma -p 8000:8000 chromadb/chroma:1.5.9
@@ -27,7 +27,7 @@ Set the following environment variables:
 ```powershell
 $env:FOUNDRY_PROJECT_ENDPOINT="https://your-resource.services.ai.azure.com/api/projects/your-project" # Replace with your Microsoft Foundry project endpoint
 $env:FOUNDRY_MODEL="gpt-5.4-mini"  # Optional, defaults to gpt-5.4-mini
-$env:FOUNDRY_EMBEDDING_MODEL="text-embedding-3-large"  # Optional, defaults to text-embedding-3-large
+$env:FOUNDRY_EMBEDDING_MODEL="text-embedding-3-large"  # Optional, defaults to text-embedding-3-large; the sample expects its 3,072 dimensions
 $env:CHROMA_ENDPOINT="http://localhost:8000"  # Optional, defaults to http://localhost:8000
 ```
 
