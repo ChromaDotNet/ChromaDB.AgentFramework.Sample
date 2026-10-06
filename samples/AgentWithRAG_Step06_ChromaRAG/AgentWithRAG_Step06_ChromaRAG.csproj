@@ -12,7 +12,7 @@
   <ItemGroup>
     <PackageReference Include="Azure.AI.OpenAI" Version="2.1.0" />
     <PackageReference Include="Azure.Identity" Version="1.21.0" />
-    <PackageReference Include="ChromaDotNet.VectorData" Version="0.3.5" />
+    <PackageReference Include="ChromaDotNet.VectorData" Version="0.3.6" />
     <PackageReference Include="Microsoft.Agents.AI.Foundry" Version="1.23.0-preview.260928.1" />
   </ItemGroup>
 
