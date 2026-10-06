@@ -1,6 +1,6 @@
 # Agent with Memory Using Chroma
 
-This sample uses `ChatHistoryMemoryProvider` with `ChromaVectorStore` from [ChromaDotNet.VectorData](https://www.nuget.org/packages/ChromaDotNet.VectorData) to persist chat history in [Chroma](https://www.trychroma.com/) and recall relevant messages in a new agent session.
+This sample persists chat history in [Chroma](https://www.trychroma.com/) and recalls relevant messages in a new agent session. It uses `ChatHistoryMemoryProvider` with `ChromaVectorStore` from [ChromaDotNet.VectorData](https://www.nuget.org/packages/ChromaDotNet.VectorData).
 
 ## Features Demonstrated
 
@@ -15,7 +15,7 @@ This sample uses `ChatHistoryMemoryProvider` with `ChromaVectorStore` from [Chro
 2. A Microsoft Foundry project with:
    - A chat model deployment (the default is `gpt-5.4-mini`)
    - A `text-embedding-3-large` deployment with 3,072 dimensions
-3. A running Chroma server, 1.5.0 or later: `docker compose up -d chroma` at the root of the repository starts the instance defined in the [compose file](../../compose.yaml), or you can run one with Docker:
+3. A running Chroma server, version 1.5.0 or later. To start the instance defined in the [compose file](../../compose.yaml), run `docker compose up -d chroma` at the root of the repository. Or you can run one with Docker:
 
    ```bash
    docker run -d --name chroma -p 8000:8000 chromadb/chroma:1.5.9
@@ -23,7 +23,7 @@ This sample uses `ChatHistoryMemoryProvider` with `ChromaVectorStore` from [Chro
 
 4. Azure CLI authentication (`az login`) with an identity that has the Foundry User role on the Foundry resource
 
-The Foundry project endpoint does not serve embeddings, so the sample generates them through the endpoint of the Foundry resource that hosts the project, with the same credential.
+The Foundry project endpoint does not serve embeddings. The sample generates them through the endpoint of the Foundry resource that hosts the project, using the same credential.
 
 ## Configuration
 
@@ -43,4 +43,4 @@ Set the following environment variables:
 dotnet run
 ```
 
-The first session stores the user's preference for pirate jokes. The second session uses a different `AgentSession` but the same per-run user search scope, allowing the agent to retrieve that preference from Chroma without recalling data from earlier sample runs.
+The first session stores the user's preference for pirate jokes. The second session uses a different `AgentSession` but the same per-run user search scope. This lets the agent retrieve that preference from Chroma without recalling data from earlier sample runs.
