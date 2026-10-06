@@ -22,7 +22,7 @@ public sealed class ChromaFixture : IAsyncLifetime
     {
         await _container.StartAsync();
         ChromaClient = new ChromaClient(new ChromaConfigurationOptions(_container.GetConnectionString()), _httpClient);
-        VectorStore = new ChromaVectorStore(ChromaClient, new ChromaVectorStoreOptions { EmbeddingGenerator = new WordEmbeddingGenerator(EmbeddingDimensions) });
+        VectorStore = new ChromaVectorStore(ChromaClient, ownsClient: false, new ChromaVectorStoreOptions { EmbeddingGenerator = new WordEmbeddingGenerator(EmbeddingDimensions) });
     }
 
     public async ValueTask DisposeAsync()
