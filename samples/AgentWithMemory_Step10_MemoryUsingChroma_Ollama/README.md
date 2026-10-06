@@ -1,6 +1,8 @@
 # Agent with Memory Using Chroma and Ollama
 
-This sample is [Agent with Memory Using Chroma](../AgentWithMemory_Step10_MemoryUsingChroma/) with models that run locally in [Ollama](https://ollama.com/) instead of Microsoft Foundry. It uses `ChatHistoryMemoryProvider` with `ChromaVectorStore` from [ChromaDotNet.VectorData](https://www.nuget.org/packages/ChromaDotNet.VectorData) to persist chat history in [Chroma](https://www.trychroma.com/) and recall relevant messages in a new agent session.
+This sample is [Agent with Memory Using Chroma](../AgentWithMemory_Step10_MemoryUsingChroma/) with models that run locally in [Ollama](https://ollama.com/) instead of Microsoft Foundry.
+
+It persists chat history in [Chroma](https://www.trychroma.com/) and recalls relevant messages in a new agent session. It uses `ChatHistoryMemoryProvider` with `ChromaVectorStore` from [ChromaDotNet.VectorData](https://www.nuget.org/packages/ChromaDotNet.VectorData).
 
 ## Features Demonstrated
 
@@ -18,7 +20,7 @@ This sample is [Agent with Memory Using Chroma](../AgentWithMemory_Step10_Memory
    docker compose up -d
    ```
 
-   The first run downloads `qwen2.5:3b` and `nomic-embed-text`, about 2 GB; `docker compose logs -f ollama-models` shows the progress.
+   The first run downloads `qwen2.5:3b` and `nomic-embed-text` (about 2 GB). To see the progress, run `docker compose logs -f ollama-models`.
 
 ## Configuration
 
@@ -38,4 +40,6 @@ The defaults match the compose file. To change them, set the following environme
 dotnet run
 ```
 
-The first session stores the user's preference for pirate jokes. The second session uses a different `AgentSession` but the same per-run user search scope, allowing the agent to retrieve that preference from Chroma without recalling data from earlier sample runs. The chat history goes in a collection of its own, `chathistory-local`, since the local embedding model has fewer dimensions than the Foundry one.
+The first session stores the user's preference for pirate jokes. The second session uses a different `AgentSession` but the same per-run user search scope. This lets the agent retrieve that preference from Chroma without recalling data from earlier sample runs.
+
+The chat history goes in its own collection, `chathistory-local`, because the local embedding model has fewer dimensions than the Foundry one.

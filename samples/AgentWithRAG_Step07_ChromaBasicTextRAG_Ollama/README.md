@@ -1,6 +1,9 @@
 # Agent Framework Retrieval Augmented Generation (RAG) with Chroma, the TextSearchStore and Ollama
 
-This sample is [RAG with Chroma and the TextSearchStore](../AgentWithRAG_Step07_ChromaBasicTextRAG/) with models that run locally in [Ollama](https://ollama.com/) instead of Microsoft Foundry. It demonstrates how to create and run an agent that uses Retrieval Augmented Generation (RAG) with [Chroma](https://www.trychroma.com/) as the vector store, through `ChromaVectorStore` from [ChromaDotNet.VectorData](https://www.nuget.org/packages/ChromaDotNet.VectorData), with the documents stored by the `TextSearchStore` of that sample.
+This sample is [RAG with Chroma and the TextSearchStore](../AgentWithRAG_Step07_ChromaBasicTextRAG/) with models that run locally in [Ollama](https://ollama.com/) instead of Microsoft Foundry.
+
+It demonstrates how to create and run an agent that uses Retrieval Augmented Generation (RAG) with [Chroma](https://www.trychroma.com/) as the vector store. It connects to Chroma through `ChromaVectorStore` from [ChromaDotNet.VectorData](https://www.nuget.org/packages/ChromaDotNet.VectorData).
+The documents are stored by the `TextSearchStore` from that sample.
 
 ## Prerequisites
 
@@ -11,7 +14,7 @@ This sample is [RAG with Chroma and the TextSearchStore](../AgentWithRAG_Step07_
 docker compose up -d
 ```
 
-The first run downloads `qwen2.5:3b` and `nomic-embed-text`, about 2 GB; `docker compose logs -f ollama-models` shows the progress.
+The first run downloads `qwen2.5:3b` and `nomic-embed-text` (about 2 GB). To see the progress, run `docker compose logs -f ollama-models`.
 
 ## Running the sample from the console
 
@@ -31,4 +34,4 @@ Execute the following command to build and run the sample:
 dotnet run
 ```
 
-The documents go in a collection of their own, `product-and-policy-info-local`, since the local embedding model has fewer dimensions than the Foundry one.
+The documents go in their own collection, `product-and-policy-info-local`, because the local embedding model has fewer dimensions than the Foundry one.
