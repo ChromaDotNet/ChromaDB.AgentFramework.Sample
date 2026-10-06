@@ -34,6 +34,7 @@ AzureOpenAIClient foundryResourceClient = new(new Uri(new Uri(endpoint).GetLeftP
 using HttpClient httpClient = new();
 using ChromaVectorStore vectorStore = new(
     new ChromaClient(new ChromaConfigurationOptions(chromaEndpoint), httpClient),
+    ownsClient: true,
     new ChromaVectorStoreOptions
     {
         EmbeddingGenerator = foundryResourceClient.GetEmbeddingClient(embeddingDeploymentName).AsIEmbeddingGenerator()

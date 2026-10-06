@@ -25,6 +25,7 @@ using IEmbeddingGenerator<string, Embedding<float>> embeddingGenerator = new Oll
 using HttpClient httpClient = new();
 using ChromaVectorStore vectorStore = new(
     new ChromaClient(new ChromaConfigurationOptions(chromaEndpoint), httpClient),
+    ownsClient: true,
     new ChromaVectorStoreOptions
     {
         EmbeddingGenerator = embeddingGenerator

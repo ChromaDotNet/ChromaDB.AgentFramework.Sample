@@ -73,7 +73,7 @@ public sealed class BasicTextRagTests(ChromaFixture chroma) : IClassFixture<Chro
     // and a chat history that does not store the search results.
     private async Task<AIAgent> CreateAgentAsync(RecordingChatClient model)
     {
-        var vectorStore = new ChromaVectorStore(chroma.ChromaClient, new ChromaVectorStoreOptions { EmbeddingGenerator = new WordEmbeddingGenerator(EmbeddingDimensions) });
+        var vectorStore = new ChromaVectorStore(chroma.ChromaClient, ownsClient: false, new ChromaVectorStoreOptions { EmbeddingGenerator = new WordEmbeddingGenerator(EmbeddingDimensions) });
         await vectorStore.EnsureCollectionDeletedAsync(CollectionName, _cancellationToken);
         TextSearchStore textSearchStore = new(vectorStore, CollectionName, EmbeddingDimensions);
         await textSearchStore.UpsertDocumentsAsync(
