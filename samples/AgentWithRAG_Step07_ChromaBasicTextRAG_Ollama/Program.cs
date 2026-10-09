@@ -6,7 +6,7 @@
 // The TextSearchStore is a sample store implementation that hardcodes a storage schema and uses the vector store to store and retrieve documents.
 
 using ChromaDB.Client;
-using ChromaDB.VectorData;
+using CommunityToolkit.VectorData.Chroma;
 using Microsoft.Agents.AI;
 using Microsoft.Agents.AI.Samples;
 using Microsoft.Extensions.AI;

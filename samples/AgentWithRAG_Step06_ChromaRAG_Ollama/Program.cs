@@ -5,7 +5,7 @@
 // The TextSearchProvider runs a search against the vector store before each model invocation and injects the results into the model context.
 
 using ChromaDB.Client;
-using ChromaDB.VectorData;
+using CommunityToolkit.VectorData.Chroma;
 using Microsoft.Agents.AI;
 using Microsoft.Extensions.AI;
 using Microsoft.Extensions.VectorData;

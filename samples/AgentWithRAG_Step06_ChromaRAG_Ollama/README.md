@@ -2,7 +2,7 @@
 
 This sample is [RAG with Chroma and a custom schema](../AgentWithRAG_Step06_ChromaRAG/) with models that run locally in [Ollama](https://ollama.com/) instead of Microsoft Foundry.
 
-It demonstrates how to create and run an agent that uses Retrieval Augmented Generation (RAG) with [Chroma](https://www.trychroma.com/) as the vector store. It connects to Chroma through `ChromaVectorStore` from [ChromaDotNet.VectorData](https://www.nuget.org/packages/ChromaDotNet.VectorData).
+It demonstrates how to create and run an agent that uses Retrieval Augmented Generation (RAG) with [Chroma](https://www.trychroma.com/) as the vector store. It connects to Chroma through `ChromaVectorStore` from [CommunityToolkit.VectorData.Chroma](https://www.nuget.org/packages/CommunityToolkit.VectorData.Chroma).
 It also uses a custom schema for the documents.
 
 ## Prerequisites

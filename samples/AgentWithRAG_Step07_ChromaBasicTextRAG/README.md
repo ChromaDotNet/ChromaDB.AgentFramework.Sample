@@ -1,6 +1,6 @@
 # Agent Framework Retrieval Augmented Generation (RAG) with Chroma and the TextSearchStore
 
-This sample demonstrates how to create and run an agent that uses Retrieval Augmented Generation (RAG) with [Chroma](https://www.trychroma.com/) as the vector store. It connects to Chroma through `ChromaVectorStore` from [ChromaDotNet.VectorData](https://www.nuget.org/packages/ChromaDotNet.VectorData).
+This sample demonstrates how to create and run an agent that uses Retrieval Augmented Generation (RAG) with [Chroma](https://www.trychroma.com/) as the vector store. It connects to Chroma through `ChromaVectorStore` from [CommunityToolkit.VectorData.Chroma](https://www.nuget.org/packages/CommunityToolkit.VectorData.Chroma).
 The documents are stored by the `TextSearchStore` from the [Agent Framework sample](https://github.com/microsoft/agent-framework/tree/main/dotnet/samples/02-agents/AgentWithRAG/AgentWithRAG_Step01_BasicTextRAG), copied here unchanged. It is a sample store implementation that hardcodes a storage schema. It writes and reads the records as dictionaries.
 
 ## Prerequisites

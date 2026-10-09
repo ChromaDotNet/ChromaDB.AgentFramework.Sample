@@ -1,5 +1,5 @@
 using ChromaDB.Client;
-using ChromaDB.VectorData;
+using CommunityToolkit.VectorData.Chroma;
 using Testcontainers.Chroma;
 
 namespace ChromaDB.AgentFramework.Sample.Tests;
