@@ -8,7 +8,7 @@ using Azure.AI.OpenAI;
 using Azure.AI.Projects;
 using Azure.Identity;
 using ChromaDB.Client;
-using ChromaDB.VectorData;
+using CommunityToolkit.VectorData.Chroma;
 using Microsoft.Agents.AI;
 using Microsoft.Agents.AI.Samples;
 using Microsoft.Extensions.AI;

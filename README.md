@@ -2,7 +2,7 @@
 
 # ChromaDB.AgentFramework.Sample
 
-[Microsoft Agent Framework](https://learn.microsoft.com/agent-framework/) samples that use [Chroma](https://www.trychroma.com/) as the vector store through [ChromaDotNet.VectorData](https://www.nuget.org/packages/ChromaDotNet.VectorData).
+[Microsoft Agent Framework](https://learn.microsoft.com/agent-framework/) samples that use [Chroma](https://www.trychroma.com/) as the vector store through [CommunityToolkit.VectorData.Chroma](https://www.nuget.org/packages/CommunityToolkit.VectorData.Chroma). It is the Chroma provider of the [AI Community Toolkit](https://github.com/CommunityToolkit/AI).
 
 They follow the form of the [Agent Framework .NET samples](https://github.com/microsoft/agent-framework/tree/main/dotnet/samples/02-agents). Chroma takes the place of the vector store that the original sample uses. Each sample also comes in a variant with models that run locally in Ollama.
 

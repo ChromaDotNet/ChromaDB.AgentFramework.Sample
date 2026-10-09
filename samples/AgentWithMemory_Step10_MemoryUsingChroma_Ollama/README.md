@@ -2,7 +2,7 @@
 
 This sample is [Agent with Memory Using Chroma](../AgentWithMemory_Step10_MemoryUsingChroma/) with models that run locally in [Ollama](https://ollama.com/) instead of Microsoft Foundry.
 
-It persists chat history in [Chroma](https://www.trychroma.com/) and recalls relevant messages in a new agent session. It uses `ChatHistoryMemoryProvider` with `ChromaVectorStore` from [ChromaDotNet.VectorData](https://www.nuget.org/packages/ChromaDotNet.VectorData).
+It persists chat history in [Chroma](https://www.trychroma.com/) and recalls relevant messages in a new agent session. It uses `ChatHistoryMemoryProvider` with `ChromaVectorStore` from [CommunityToolkit.VectorData.Chroma](https://www.nuget.org/packages/CommunityToolkit.VectorData.Chroma).
 
 ## Features Demonstrated
 

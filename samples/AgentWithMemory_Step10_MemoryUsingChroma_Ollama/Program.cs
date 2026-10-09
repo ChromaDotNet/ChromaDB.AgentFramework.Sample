@@ -5,7 +5,7 @@
 // The agent can then use chat history from prior conversations to inform responses in new conversations.
 
 using ChromaDB.Client;
-using ChromaDB.VectorData;
+using CommunityToolkit.VectorData.Chroma;
 using Microsoft.Agents.AI;
 using Microsoft.Extensions.AI;
 using Microsoft.Extensions.VectorData;
