@@ -1,0 +1,7 @@
+# The .NET container of the dev container. Chroma and Ollama come from the compose.yaml at the root.
+services:
+  dev:
+    image: mcr.microsoft.com/devcontainers/dotnet:1-10.0
+    volumes:
+      - ../..:/workspaces:cached
+    command: sleep infinity

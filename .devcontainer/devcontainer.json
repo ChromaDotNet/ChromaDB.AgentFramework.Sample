@@ -1,0 +1,19 @@
+{
+  "name": "ChromaDB.AgentFramework.Sample",
+  "dockerComposeFile": ["compose.yaml", "../compose.yaml"],
+  "service": "dev",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "features": {
+    "ghcr.io/devcontainers/features/sshd:1": {}
+  },
+  "containerEnv": {
+    "CHROMA_ENDPOINT": "http://chroma:8000",
+    "OLLAMA_ENDPOINT": "http://ollama:11434"
+  },
+  "postCreateCommand": "dotnet restore && .devcontainer/wait-for-models.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-dotnettools.csharp"]
+    }
+  }
+}
