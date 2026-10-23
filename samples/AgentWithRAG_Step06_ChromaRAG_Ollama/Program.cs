@@ -19,8 +19,10 @@ var chromaEndpoint = Environment.GetEnvironmentVariable("CHROMA_ENDPOINT") ?? "h
 var afOverviewUrl = "https://raw.githubusercontent.com/MicrosoftDocs/semantic-kernel-docs/caf5bacdc2d38864cb3cf6e7d6c0e0a1e5dea9a3/agent-framework/overview/index.md";
 var afMigrationUrl = "https://raw.githubusercontent.com/MicrosoftDocs/semantic-kernel-docs/caf5bacdc2d38864cb3cf6e7d6c0e0a1e5dea9a3/agent-framework/migration-guide/from-semantic-kernel/index.md";
 
-using IChatClient chatClient = new OllamaApiClient(new Uri(endpoint), modelName);
-using IEmbeddingGenerator<string, Embedding<float>> embeddingGenerator = new OllamaApiClient(new Uri(endpoint), embeddingModelName);
+// A model that runs locally can take longer than the 100 seconds that HttpClient waits by default.
+using HttpClient ollamaHttpClient = new() { BaseAddress = new Uri(endpoint), Timeout = TimeSpan.FromMinutes(10) };
+using IChatClient chatClient = new OllamaApiClient(ollamaHttpClient, modelName);
+using IEmbeddingGenerator<string, Embedding<float>> embeddingGenerator = new OllamaApiClient(ollamaHttpClient, embeddingModelName);
 
 // Create a Chroma vector store that uses the Ollama embedding model to generate embeddings.
 using HttpClient httpClient = new();

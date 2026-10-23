@@ -22,8 +22,10 @@ if (Environment.GetEnvironmentVariable("OLLAMA_EMBEDDING_DIMENSIONS") is string 
 }
 var chromaEndpoint = Environment.GetEnvironmentVariable("CHROMA_ENDPOINT") ?? "http://localhost:8000";
 
-using IChatClient chatClient = new OllamaApiClient(new Uri(endpoint), modelName);
-using IEmbeddingGenerator<string, Embedding<float>> embeddingGenerator = new OllamaApiClient(new Uri(endpoint), embeddingModelName);
+// A model that runs locally can take longer than the 100 seconds that HttpClient waits by default.
+using HttpClient ollamaHttpClient = new() { BaseAddress = new Uri(endpoint), Timeout = TimeSpan.FromMinutes(10) };
+using IChatClient chatClient = new OllamaApiClient(ollamaHttpClient, modelName);
+using IEmbeddingGenerator<string, Embedding<float>> embeddingGenerator = new OllamaApiClient(ollamaHttpClient, embeddingModelName);
 
 using HttpClient httpClient = new();
 using ChromaVectorStore vectorStore = new(
