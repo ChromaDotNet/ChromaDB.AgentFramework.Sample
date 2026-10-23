@@ -15,8 +15,9 @@ var endpoint = Environment.GetEnvironmentVariable("OLLAMA_ENDPOINT") ?? "http://
 var modelName = Environment.GetEnvironmentVariable("OLLAMA_MODEL_NAME") ?? "qwen2.5:3b";
 var embeddingModelName = Environment.GetEnvironmentVariable("OLLAMA_EMBEDDING_MODEL_NAME") ?? "nomic-embed-text";
 var chromaEndpoint = Environment.GetEnvironmentVariable("CHROMA_ENDPOINT") ?? "http://localhost:8000";
-var afOverviewUrl = "https://raw.githubusercontent.com/MicrosoftDocs/semantic-kernel-docs/refs/heads/main/agent-framework/overview/index.md";
-var afMigrationUrl = "https://raw.githubusercontent.com/MicrosoftDocs/semantic-kernel-docs/refs/heads/main/agent-framework/migration-guide/from-semantic-kernel/index.md";
+// The documentation pages at a fixed commit, since they can move or be removed on the main branch of the documentation repository.
+var afOverviewUrl = "https://raw.githubusercontent.com/MicrosoftDocs/semantic-kernel-docs/caf5bacdc2d38864cb3cf6e7d6c0e0a1e5dea9a3/agent-framework/overview/index.md";
+var afMigrationUrl = "https://raw.githubusercontent.com/MicrosoftDocs/semantic-kernel-docs/caf5bacdc2d38864cb3cf6e7d6c0e0a1e5dea9a3/agent-framework/migration-guide/from-semantic-kernel/index.md";
 
 using IChatClient chatClient = new OllamaApiClient(new Uri(endpoint), modelName);
 using IEmbeddingGenerator<string, Embedding<float>> embeddingGenerator = new OllamaApiClient(new Uri(endpoint), embeddingModelName);
