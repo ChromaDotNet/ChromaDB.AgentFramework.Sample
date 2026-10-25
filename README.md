@@ -6,7 +6,7 @@
 
 They follow the form of the [Agent Framework .NET samples](https://github.com/microsoft/agent-framework/tree/main/dotnet/samples/02-agents). Chroma takes the place of the vector store that the original sample uses. Each sample also comes in a variant with models that run locally in Ollama.
 
-> This is a community project. It is not affiliated with or endorsed by Chroma.
+> ChromaDotNet is an independent community project that provides .NET libraries and tools for Chroma. Independent project. Not affiliated with, endorsed by or sponsored by Chroma Inc. CHROMA is a registered trademark of Chroma Inc., used here only to describe compatibility. We use the name "Chroma" only to say which software our projects work with. It does not mean that Chroma Inc. made, approved or supports them.
 
 Website: [chromadotnet.org](https://chromadotnet.org)
 
